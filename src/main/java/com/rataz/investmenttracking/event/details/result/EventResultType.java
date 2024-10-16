@@ -1,4 +1,4 @@
-package com.rataz.investmenttracking.event.result;
+package com.rataz.investmenttracking.event.details.result;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

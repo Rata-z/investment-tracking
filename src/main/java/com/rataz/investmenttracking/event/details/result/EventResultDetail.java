@@ -1,5 +1,4 @@
-package com.rataz.investmenttracking.event.statistic;
-
+package com.rataz.investmenttracking.event.details.result;
 
 import com.rataz.investmenttracking.event.Event;
 import jakarta.persistence.*;
@@ -7,15 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="event_statistic_detail")
-public class EventStatisticDetail {
-
+@Table(name = "event_result_detail")
+public class EventResultDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -25,11 +21,7 @@ public class EventStatisticDetail {
     private Event event;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "statistic_type_id",nullable = false)
-    private EventStatisticType eventStatisticType;
-
-    private BigDecimal amount;
-    private boolean under;
-
+    @JoinColumn(name = "result_type_id",nullable = false)
+    private EventResultType eventResultType;
 
 }
