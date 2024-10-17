@@ -14,7 +14,7 @@ public class EventController {
     EventRepository eventRepository;
 
     @GetMapping("/")
-    public List<Event> getAll2(){
+    public List<Event> getAll2() {
         return eventRepository.findAll();
 
     }

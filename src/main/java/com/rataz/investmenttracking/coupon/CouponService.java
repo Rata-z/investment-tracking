@@ -1,11 +1,14 @@
 package com.rataz.investmenttracking.coupon;
 
-import java.util.List;
 import java.util.Optional;
 
-public interface CouponService {
+interface CouponService {
 
     Iterable<Coupon> getAllCoupons();
+
     Coupon createCoupon(Coupon coupon);
-    Optional<Coupon> getCoupon(Integer id);
+
+    Optional<Coupon> getCoupon(Long id);
+
+    boolean deleteCoupon(Long id);
 }

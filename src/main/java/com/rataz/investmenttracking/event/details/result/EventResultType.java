@@ -15,10 +15,10 @@ import java.util.List;
 public class EventResultType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column(name = "result_type",unique = true)
+    @Column(name = "result_type", unique = true)
     private String resultType;
-    @OneToMany(mappedBy = "eventResultType",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "eventResultType", fetch = FetchType.LAZY)
     private List<EventResultDetail> eventResults;
 }

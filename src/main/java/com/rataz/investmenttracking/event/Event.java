@@ -13,23 +13,23 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="event")
+@Table(name = "event")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="coupon_id",nullable = false)
+    @JoinColumn(name = "coupon_id", nullable = false)
     private Coupon coupon;
 
-    @Column(name="is_won")
+    @Column(name = "is_won")
     private boolean isWon;
     private BigDecimal odds;
-    @Column(name="live_bet")
+    @Column(name = "live_bet")
     private boolean liveBet;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="event_type_id",nullable = false)
+    @JoinColumn(name = "event_type_id", nullable = false)
     private EventType eventType;
 }

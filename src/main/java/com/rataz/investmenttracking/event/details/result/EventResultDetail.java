@@ -14,14 +14,14 @@ import lombok.NoArgsConstructor;
 public class EventResultDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @OneToOne
-    @JoinColumn(name="event_id")
+    @JoinColumn(name = "event_id")
     private Event event;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "result_type_id",nullable = false)
+    @JoinColumn(name = "result_type_id", nullable = false)
     private EventResultType eventResultType;
 
 }

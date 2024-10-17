@@ -11,15 +11,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="event_type")
+@Table(name = "event_type")
 public class EventType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column(name = "event_type",unique = true)
+    @Column(name = "event_type", unique = true)
     private String eventType;
 
-    @OneToMany(mappedBy = "eventType",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "eventType", fetch = FetchType.LAZY)
     private List<Event> events;
 }

@@ -1,19 +1,16 @@
 package com.rataz.investmenttracking;
 
-import com.rataz.investmenttracking.coupon.Coupon;
 import com.rataz.investmenttracking.coupon.CouponRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 class ApplicationTests {
-	private CouponRepository couponRepository;
+    private CouponRepository couponRepository;
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 //	@Test
 //	public void testGetAll(){

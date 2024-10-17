@@ -1,17 +1,15 @@
 package com.rataz.investmenttracking.coupon;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CouponServiceImpl implements CouponService{
+class CouponServiceImpl implements CouponService {
     CouponRepository couponRepository;
-    @Autowired
-    public CouponServiceImpl(CouponRepository couponRepository){
-        this.couponRepository=couponRepository;
+
+    public CouponServiceImpl(CouponRepository couponRepository) {
+        this.couponRepository = couponRepository;
     }
 
     @Override
@@ -25,7 +23,17 @@ public class CouponServiceImpl implements CouponService{
     }
 
     @Override
-    public Optional<Coupon> getCoupon(Integer id) {
+    public Optional<Coupon> getCoupon(Long id) {
         return couponRepository.findById(id);
+    }
+
+    @Override
+    public boolean deleteCoupon(Long id) {
+        Optional<Coupon> deletedCoupon = couponRepository.findById(id);
+        if (deletedCoupon.isPresent()) {
+            couponRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

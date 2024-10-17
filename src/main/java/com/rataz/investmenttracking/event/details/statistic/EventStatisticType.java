@@ -15,11 +15,11 @@ import java.util.List;
 public class EventStatisticType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column(name = "statistic_type",unique = true,nullable = false)
+    @Column(name = "statistic_type", unique = true, nullable = false)
     private String statisticType;
 
-    @OneToMany(mappedBy = "eventStatisticType",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "eventStatisticType", fetch = FetchType.LAZY)
     private List<EventStatisticDetail> statisticDetails;
 }

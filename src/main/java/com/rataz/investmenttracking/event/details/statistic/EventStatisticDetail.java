@@ -13,19 +13,19 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="event_statistic_detail")
+@Table(name = "event_statistic_detail")
 public class EventStatisticDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @OneToOne
-    @JoinColumn(name="event_id")
+    @JoinColumn(name = "event_id")
     private Event event;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "statistic_type_id",nullable = false)
+    @JoinColumn(name = "statistic_type_id", nullable = false)
     private EventStatisticType eventStatisticType;
 
     private BigDecimal amount;
