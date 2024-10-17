@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CouponRepository  extends JpaRepository<Coupon,Integer> {
 
-    @Query( "SELECT c FROM Coupon c")
-    List<Coupon> getAllCoupons();
+//    @Query( "SELECT c FROM Coupon c")
+//    List<Coupon> getAllCoupons();
 }

@@ -1,17 +1,15 @@
 package com.rataz.investmenttracking.coupon;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/coupons")
 public class CouponController {
-    @Autowired
-    CouponRepository couponRepository;
     CouponService couponService;
 
     @Autowired
@@ -19,9 +17,22 @@ public class CouponController {
         this.couponService=couponService;
     }
 
-    @GetMapping("/")
-    public List<Coupon> getAll(){
-        return couponRepository.getAllCoupons();
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Iterable<Coupon> getAll(){
+        return couponService.getAllCoupons();
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Coupon createCoupon(@RequestBody  Coupon coupon){
+        return couponService.createCoupon(coupon);
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Optional<Coupon> getCouponById(@PathVariable Integer id){
+        return  couponService.getCoupon(id);
     }
 
 }
