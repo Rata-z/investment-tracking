@@ -21,5 +21,5 @@ public class EventStatisticType {
     private String statisticType;
 
     @OneToMany(mappedBy = "eventStatisticType", fetch = FetchType.LAZY)
-    private List<EventStatisticDetail> statisticDetails;
+    private List<EventStatistic> statisticDetails;
 }

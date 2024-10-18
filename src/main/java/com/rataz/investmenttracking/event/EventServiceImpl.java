@@ -1,9 +1,7 @@
 package com.rataz.investmenttracking.event;
 
-import com.rataz.investmenttracking.coupon.Coupon;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service

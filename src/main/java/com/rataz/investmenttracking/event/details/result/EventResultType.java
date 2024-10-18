@@ -20,5 +20,5 @@ public class EventResultType {
     @Column(name = "result_type", unique = true)
     private String resultType;
     @OneToMany(mappedBy = "eventResultType", fetch = FetchType.LAZY)
-    private List<EventResultDetail> eventResults;
+    private List<EventResult> eventResults;
 }

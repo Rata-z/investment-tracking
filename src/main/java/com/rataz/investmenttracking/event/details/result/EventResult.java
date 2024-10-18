@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "event_result_detail")
-public class EventResultDetail {
+@Table(name = "event_result")
+public class EventResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
