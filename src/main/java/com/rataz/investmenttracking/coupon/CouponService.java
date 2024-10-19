@@ -10,7 +10,7 @@ interface CouponService {
 
     Coupon createCoupon(Coupon coupon);
 
-    Optional<Coupon> getCoupon(Long id);
+    Optional<Coupon> getCouponById(Long id);
 
     boolean deleteCoupon(Long id);
 }

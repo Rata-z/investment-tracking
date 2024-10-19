@@ -23,7 +23,7 @@ class CouponServiceImpl implements CouponService {
     }
 
     @Override
-    public Optional<Coupon> getCoupon(Long id) {
+    public Optional<Coupon> getCouponById(Long id) {
         return couponRepository.findById(id);
     }
 

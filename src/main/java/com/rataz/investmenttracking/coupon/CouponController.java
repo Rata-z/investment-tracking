@@ -30,7 +30,7 @@ class CouponController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Optional<Coupon> getCouponById(@PathVariable Long id) {
-        return couponService.getCoupon(id);
+        return couponService.getCouponById(id);
 
     }
 
