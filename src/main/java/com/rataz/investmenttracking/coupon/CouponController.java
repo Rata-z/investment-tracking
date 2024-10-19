@@ -28,13 +28,13 @@ class CouponController {
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public Optional<Coupon> getCouponById(@PathVariable Long id) {
         return couponService.getCouponById(id);
 
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Boolean> deleteCouponById(@PathVariable Long id) {
         boolean deleted = couponService.deleteCoupon(id);
         HttpStatus status = deleted ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND;

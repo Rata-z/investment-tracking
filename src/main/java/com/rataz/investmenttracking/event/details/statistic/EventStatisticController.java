@@ -1,6 +1,5 @@
 package com.rataz.investmenttracking.event.details.statistic;
 
-import com.rataz.investmenttracking.event.details.result.EventResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

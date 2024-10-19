@@ -1,6 +1,5 @@
 package com.rataz.investmenttracking.event.details.statistic;
 
-import com.rataz.investmenttracking.event.details.result.EventResult;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
