@@ -47,7 +47,7 @@ class CouponControllerTest {
 
 
     @Test
-    public void CouponController_createCoupon_ReturnsCreated() throws Exception {
+    public void couponController_createCoupon_returnsCreated() throws Exception {
         when(couponService.createCoupon(any(Coupon.class))).thenReturn(coupon);
 
         RequestBuilder request = MockMvcRequestBuilders.post("/api/coupons").contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(coupon));
@@ -56,7 +56,7 @@ class CouponControllerTest {
     }
 
     @Test
-    public void CouponController_createCoupon_ReturnsBadRequest() throws Exception {
+    public void couponController_createCoupon_returnsBadRequest() throws Exception {
         when(couponService.createCoupon(any(Coupon.class))).thenReturn(coupon);
 
         RequestBuilder request = MockMvcRequestBuilders.post("/api/coupons").contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(""));
@@ -66,7 +66,7 @@ class CouponControllerTest {
 
 
     @Test
-    void CouponController_deleteCouponById_ReturnsNoContent() throws Exception {
+    void couponController_deleteCouponById_returnsNoContent() throws Exception {
         when(couponService.deleteCoupon(any(Long.class))).thenReturn(true);
         RequestBuilder request = MockMvcRequestBuilders.delete("/api/coupons/{id}", 1).contentType(MediaType.APPLICATION_JSON);
         ResultActions result = mvc.perform(request);
@@ -74,7 +74,7 @@ class CouponControllerTest {
     }
 
     @Test
-    void CouponController_deleteCouponById_ReturnsNotFound() throws Exception {
+    void couponController_deleteCouponById_returnsNotFound() throws Exception {
         when(couponService.deleteCoupon(any(Long.class))).thenReturn(false);
         RequestBuilder request = MockMvcRequestBuilders.delete("/api/coupons/{id}", 1).contentType(MediaType.APPLICATION_JSON);
         ResultActions result = mvc.perform(request);

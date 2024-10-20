@@ -35,7 +35,7 @@ class CouponServiceImplTest {
 
 
     @Test
-    public void CouponService_getAllCoupons_ReturnsCouponList() {
+    public void couponService_getAllCoupons_returnsCouponList() {
         Coupon coupon2 = Coupon.builder().isWon(false).odds(BigDecimal.valueOf(10))
                 .stake(BigDecimal.valueOf(10)).build();
         when(couponRepository.findAll()).thenReturn(Arrays.asList(coupon, coupon2));
@@ -45,7 +45,7 @@ class CouponServiceImplTest {
     }
 
     @Test
-    public void CouponService_createCoupon_ReturnsCoupon() {
+    public void couponService_createCoupon_returnsCoupon() {
         when(couponRepository.save(Mockito.any(Coupon.class))).thenReturn(coupon);
         Coupon savedCoupon = couponService.createCoupon(coupon);
 
@@ -54,7 +54,7 @@ class CouponServiceImplTest {
     }
 
     @Test
-    public void CouponService_getCouponById_ReturnsCoupon() {
+    public void couponService_getCouponById_returnsCoupon() {
         when(couponRepository.findById(1L)).thenReturn(Optional.ofNullable(coupon));
         Optional<Coupon> savedCoupon = couponService.getCouponById(1L);
 
@@ -62,14 +62,14 @@ class CouponServiceImplTest {
     }
 
     @Test
-    public void CouponService_getCouponById_ReturnsEmpty() {
+    public void couponService_getCouponById_returnsEmpty() {
         Optional<Coupon> savedCoupon = couponService.getCouponById(1L);
 
         Assertions.assertThat(savedCoupon).isEmpty();
     }
 
     @Test
-    void CouponService_deleteCoupon_ReturnsTrue() {
+    void couponService_deleteCoupon_returnsTrue() {
         when(couponRepository.findById(1L)).thenReturn(Optional.ofNullable(coupon));
         boolean isDeleted = couponService.deleteCoupon(1L);
 
@@ -77,7 +77,8 @@ class CouponServiceImplTest {
     }
 
     @Test
-    void CouponService_deleteCoupon_ReturnsFalse() {
+    void couponService_deleteCoupon_returnsFalse() {
+        when(couponRepository.findById(1L)).thenReturn(Optional.empty());
         boolean isDeleted = couponService.deleteCoupon(1L);
 
         Assertions.assertThat(isDeleted).isFalse();
